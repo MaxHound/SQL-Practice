@@ -1,0 +1,92 @@
+select name, surname
+from staff
+where address='Moscow' and age>24
+
+
+select name, surname
+from staff
+order by age
+
+
+select age
+from staff
+join positions
+on positions.id=position_id
+where position_name='qa_engineer'
+
+
+select name, surname
+from staff
+join positions
+on positions.id=position_id
+where position_name='frontend_dev'
+limit 20
+
+
+
+select computer_name
+from staff
+join positions
+on positions.id=position_id
+join computers
+on computers.id=computer_id
+where staff.name='anastasia' and staff.surname='morozova'
+
+
+select count(*)
+from staff
+where Address='Moscow'
+
+
+select name, salary
+from staff
+join positions
+on staff.position_id=positions.id
+
+
+
+select sum(salary)
+from staff
+join positions
+on staff.position_id=positions.id
+where Address='Moscow'
+
+
+
+select sum(salary), address
+from staff
+join positions
+on staff.position_id=positions.id
+group by address
+
+
+select distinct address
+from staff
+
+
+select position_name
+from positions
+where salary between 1500 and 2200
+
+select distinct address
+from staff
+where address like '%k%'
+
+
+select name, surname, position_name
+from staff
+right join positions on positions.id=position_id
+
+select count(*)
+from REVIEWS
+right join PRODUCTS
+on PRODUCTS.id=PRODUCT_ID
+where REVIEWS.id is null
+
+
+
+
+select count(*)
+from ORDERS
+where tax>=2 and tax<=5
+
